@@ -1,65 +1,39 @@
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <h4>CONTACT</h4>
+<!--
+  The Footer
+-->
 
-        <div class="social-links">
-          {% for contact in site.footer.contact %}
-            <div class="social-link contact-links">
-
-              {% assign contact_icon_path = "/assets/img/icons/" | append: contact.name | downcase | append: ".png" | absolute_url %}
-              <img
-                src="{{ contact_icon_path }}"
-                alt="{{ contact.name | downcase }}"
-              />
-              <a href="{{ contact.link }}" id="{{ contact.name | downcase }}-link">
-                {% if contact.value and contact.value != "" and contact.value != nil %}
-                  {{ contact.value }}
-                {% else %}
-                  {{ contact.name }}
-                {% endif %}
-              </a>
-            </div>
-
-          {% endfor %}
-        </div>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <h4>FOLLOW</h4>
-
-        <div class="social-links follow-links">
-          {% for follow in site.footer.follow %}
-            <div class="social-link">
-
-              {% assign follow_icon_path = "/assets/img/icons/" | append: follow.name | downcase | append: ".png" | absolute_url %}
-              <img
-                src="{{ follow_icon_path }}"
-                alt="{{ follow.name | downcase }}"
-              />
-              <a href="{{ follow.link }}">
-                {% if follow.value and follow.value != "" and follow.value != nil %}
-                  {{ follow.value }}
-                {% else %}
-                  {{ follow.name }}
-                {% endif %}
-              </a>
-            </div>
-
-          {% endfor %}
-        </div>
-      </div>
-
-      {% if site.footer.show_powered_by == true %}
-        <div class="footer-col footer-col-3 powered-by">
-          <p>
-            powered by <a href="https://github.com/eliottvincent/bay">Bay</a> | {{ 'now' | date: "%Y" }}
-          </p>
-        </div>
-      {% endif %}
+<footer class="d-flex w-100 justify-content-center">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="footer-left">
+      <p class="mb-0">
+        © {{ 'now' | date: "%Y" }}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+        {% if site.data.locales[site.lang].copyright.brief %}
+        <span data-toggle="tooltip" data-placement="top"
+          title="{{ site.data.locales[site.lang].copyright.verbose }}">{{ site.data.locales[site.lang].copyright.brief }}</span>
+        {% else %}
+        <span class="text-muted">{{ site.outdated }}</span>
+        {% endif %}
+      </p>
     </div>
-  </div>
-</footer>
 
-{% include wechat-widget.html %}
+    <div class="footer-right">
+      <p class="mb-0">
+        {% capture _platform %}
+          <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+        {% endcapture %}
+
+        {% capture _theme %}
+          <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+        {% endcapture %}
+
+        {{ site.data.locales[site.lang].meta
+          | default: 'Powered by :PLATFORM with :THEME theme.'
+          | replace: ':PLATFORM', _platform | replace: ':THEME', _theme
+        }}
+
+      </p>
+    </div>
+
+  </div> <!-- div.d-flex -->
+</footer>
