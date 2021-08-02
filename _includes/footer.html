@@ -1,22 +1,7 @@
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer left column one-half">
-      <section class="small-font">
-        Theme <a href="https://github.com/wild-flame/jekyll-simple"> Simple </a> by <a href="http://wildflame.me">wildflame</a>
-        © 2016 
-        Powered by <a href="https://github.com/jekyll/jekyll">jekyll</a>
-      </section>
-    </div>
-
-    <div class="footer right column one-half">
-      <section class="small-font">
-        {% if site.github_username %}
-        {% include icon-github.html username=site.github_username %}
-        {% endif %}
-        {% if site.twitter_username %}
-        {% include icon-twitter.html username=site.twitter_username %}
-        {% endif %}
-      </section>
-    </div>
-  </div>
+<footer class="footer {% if site.scrollappear_enabled %}scrollappear{% endif %}">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="{{ 'about' | relative_url }}" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
 </footer>
