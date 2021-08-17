@@ -12,7 +12,7 @@ sidebar: []
 
 #### Create
 
-``` mermaid!
+@startmermaid
 sequenceDiagram
     UI->>+Devices: POST /sites/{siteId}/devices
     Devices->>+Auth: Token
@@ -44,12 +44,12 @@ sequenceDiagram
             end
         end
     end
-```
+@endmermaid
 
 
 #### Get List
 
-```mermaid!
+@startmermaid
 sequenceDiagram
     UI->>+Devices: GET /sites/{siteId}/devices
     Devices->>+Auth: Token
@@ -78,11 +78,11 @@ sequenceDiagram
             end
         end
     end
-```
+@endmermaid
 
 #### Get Specific Information
 
-```mermaid!
+@startmermaid
 sequenceDiagram
     UI->>+Devices: GET /sites/{siteId}/devices/{devId}
     Devices->>+Auth: Token
@@ -111,11 +111,11 @@ sequenceDiagram
             end
         end
     end
-```
+@endmermaid
 
 #### Edit 
 
-```mermaid!
+@startmermaid
 sequenceDiagram
     UI->>+Devices: PUT /sites/{siteId}/devices/{devId}
     Devices->>+Auth: Token
@@ -144,11 +144,11 @@ sequenceDiagram
             end
         end
     end
-```
+@endmermaid
 
 #### Delete
 
-```mermaid!
+@startmermaid
 sequenceDiagram
     UI->>+Devices: DELETE /sites/{siteId}/devices/{devId}
     Devices->>+Auth: Token
@@ -177,7 +177,7 @@ sequenceDiagram
             end
         end
     end
-```
+@endmermaid
 
 
 ### 이슈 (생각해야하는 시나리오)
