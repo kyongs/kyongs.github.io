@@ -12,7 +12,7 @@ sidebar: []
 
 #### Create
 
-``` mermaid
+``` mermaid!
 sequenceDiagram
     UI->>+Devices: POST /sites/{siteId}/devices
     Devices->>+Auth: Token
@@ -49,7 +49,7 @@ sequenceDiagram
 
 #### Get List
 
-```mermaid
+```mermaid!
 sequenceDiagram
     UI->>+Devices: GET /sites/{siteId}/devices
     Devices->>+Auth: Token
@@ -82,7 +82,7 @@ sequenceDiagram
 
 #### Get Specific Information
 
-```mermaid
+```mermaid!
 sequenceDiagram
     UI->>+Devices: GET /sites/{siteId}/devices/{devId}
     Devices->>+Auth: Token
@@ -115,7 +115,7 @@ sequenceDiagram
 
 #### Edit 
 
-```mermaid
+```mermaid!
 sequenceDiagram
     UI->>+Devices: PUT /sites/{siteId}/devices/{devId}
     Devices->>+Auth: Token
@@ -148,7 +148,7 @@ sequenceDiagram
 
 #### Delete
 
-```mermaid
+```mermaid!
 sequenceDiagram
     UI->>+Devices: DELETE /sites/{siteId}/devices/{devId}
     Devices->>+Auth: Token
