@@ -19,3 +19,12 @@ Make proto
 
 docker-compose up -d
 docker exec -it -u postgres ess_db_1 psql
+
+
+\c ess
+
+Make up iotdevs OPTIONS=“—build”
+
+go run main/main.go dummy
+
+Make doc -> swagger file update
