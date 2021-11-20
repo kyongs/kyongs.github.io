@@ -1,5 +1,5 @@
 ---
-title: ^[CSS^] box-sizing
+title: "[CSS] box-sizing"
 updated: 2021-11-20 14:40
 ---
 
